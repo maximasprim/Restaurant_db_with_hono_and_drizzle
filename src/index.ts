@@ -1,0 +1,56 @@
+import { serve } from '@hono/node-server'
+import { Hono } from 'hono'
+import "dotenv/config"
+import {logger} from 'hono/logger'
+import {csrf} from 'hono/csrf'
+import { trimTrailingSlash } from 'hono/trailing-slash'
+import { timeout} from 'hono/timeout'
+import { userRouter } from './Users/user.router'
+import { HTTPException } from 'hono/http-exception'
+import { type Context } from "hono";
+import { prometheus } from '@hono/prometheus'
+
+const app = new Hono().basePath('/api')
+
+const customTimeoutException = () =>
+  new HTTPException(408, {
+    message: `Request timeout after waiting for more than 10 seconds`,
+  })
+
+  const { printMetrics, registerMetrics } = prometheus()
+//inbuilt middlewares
+
+app.use(logger())//logs requests and response on the console
+app.use(csrf())//prevents csrf attacks by checking request headrers
+app.use(trimTrailingSlash())//removes trailing slash from request url
+app.use('/time',timeout(10000, customTimeoutException))
+
+// 3rd party middleware
+
+app.use('*', registerMetrics)
+// /default route
+app.get('/ok', (c) => {
+  return c.text('The server is running fine')
+})
+
+app.get('/time', async(c) =>{
+  
+    await new Promise((resolve) => setTimeout(resolve, 11000))
+  
+  return c.text("data after 5 seconds",200)
+})
+
+
+app.get('/metrics', printMetrics)
+
+
+// custom route
+app.route("/",userRouter)  //users
+
+
+console.log(`Server is running on port ${process.env.PORT}`)
+
+serve({
+  fetch: app.fetch,
+  port: Number(process.env.PORT) 
+})
