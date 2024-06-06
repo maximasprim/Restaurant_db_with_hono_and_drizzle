@@ -3,45 +3,89 @@ GET http://localhost:8000/
 ###
 GET http://localhost:8000/api/ok
 ###
+
 GET http://localhost:8000/api/time
 
 ###
-GET http://localhost:8000/api/users
+GET http://localhost:8000/api/users 
 ###
 GET http://localhost:8000/api/metrics
 ###
-GET http://localhost:8000/api/users/4
+GET http://localhost:8000/api/users/1
 ###
 POST http://localhost:8000/api/users
-
 Content-Type: application/json
 
-{
-    "id": 10,
-  "name": "John Doe",
-  "contact_phone": "123-456-7890",
-  "phone_verified": true,
-  "email": "john.doe@example.com",
-  "email_verified": true,
-  "confirmation_code": "CONF123456",
-  "password": "hashed_password_1",
-  "created_at": "2024-06-05T19:39:20.429Z",
-  "updated_at": "2024-06-05T19:39:20.429Z"
-}
-###
-PUT http://localhost:8000/api/users/1
-
-Content-Type: application/json
-
-{
-    "id": 1,
-    "name": "Maximas prime",
-    "contact_phone": "123-456-7890",
+  {
+    "id": 3,
+    "name": "john Doe",
+    "contact_phone": 34557299,
     "phone_verified": true,
     "email": "john.doe@example.com",
     "email_verified": true,
-    "confirmation_code": "CONF123456",
-    "password": "hashed_password_1",
-    "created_at": "2024-06-05T19:52:11.507Z",
-    "updated_at": "2024-06-05T19:52:11.507Z"
-  },
+    "confirmation_code": 12345,
+    "password": "password123"
+  }
+###
+PUT http://localhost:8000/api/users/2
+
+Content-Type: application/json
+
+{
+    
+    "email": "janesmitha@gmail.com"
+    
+}
+###
+GET http://localhost:8000/api/states
+
+###
+GET http://localhost:8000/api/states/4
+
+###
+POST http://localhost:8000/api/states
+ Content-Type: application/json
+
+ {
+  "id": 6,
+  "name": "Miami",
+  "code": "MM"
+}
+
+###
+PUT http://localhost:8000/api/states/3
+ Content-Type: application/json
+
+  {
+    
+    "name": "kutus"
+    
+  }
+
+###
+GET http://localhost:8000/api/cities
+
+###
+GET http://localhost:8000/api/cities/3
+###
+POST http://localhost:8000/api/cities
+ Content-Type: application/json
+
+
+    {
+       "id": 4,
+       "name": "Atlanta",
+       "state_id": 6
+    }
+
+###
+PUT http://localhost:8000/api/cities/5
+ Content-Type: application/json
+
+    { 
+
+      "name": "Florida"
+    }
+
+
+ 

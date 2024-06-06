@@ -6,9 +6,12 @@ import {csrf} from 'hono/csrf'
 import { trimTrailingSlash } from 'hono/trailing-slash'
 import { timeout} from 'hono/timeout'
 import { userRouter } from './Users/user.router'
+import { cityRouter } from './city/city.router'
+import { stateRouter } from './state/state.router'
 import { HTTPException } from 'hono/http-exception'
 import { type Context } from "hono";
 import { prometheus } from '@hono/prometheus'
+
 
 const app = new Hono().basePath('/api')
 
@@ -46,6 +49,8 @@ app.get('/metrics', printMetrics)
 
 // custom route
 app.route("/",userRouter)  //users
+app.route("/",stateRouter)  //users
+app.route("/",cityRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)

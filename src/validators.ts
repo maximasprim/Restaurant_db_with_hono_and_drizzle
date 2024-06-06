@@ -6,10 +6,25 @@ export const userSchema = z.object({
     name:z.string(),
     contact_phone:z.number(),
     phone_verified:z.boolean(),
-    email:z.string(),
+    email:z.string().email(),
     email_verified:z.boolean(),
-    confirmation_code:z.string(),
+    confirmation_code:z.number(),
     password:z.string(),
-    created_at:z.date().optional(),
-    updated_at:z.date().optional()
+    // created_at: z.number(),
+    // updated_at: z.number()
+    
+})
+export const stateSchema = z.object({
+    id:z.number(),
+    name:z.string(),
+    code:z.string(),
+        
+})
+
+export const citySchema = z.object({
+    id:z.number(),
+    name:z.string(),
+    state_id:z.number()
+    
+    
 })

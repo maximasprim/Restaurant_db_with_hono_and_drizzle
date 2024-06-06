@@ -1,27 +1,31 @@
 import { Hono } from "hono";
-import { createUser, getUser, listUsers, updateUser } from "./user.controller";
+import { createUser, getSingleUser, listUsers, updateUser } from "./user.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { userSchema } from "../validators";
+
+
 
 //creating hono instance
 
 export const userRouter = new Hono();
 
-//get all users      /api/users
-  // creating routes
+// get states
 userRouter.get("/users", listUsers)
 
-//get a single user    /users/1
+//get a single user    
 
-userRouter.get("/users/:id", getUser)
+userRouter.get("/users/:id", getSingleUser)
+
+// 
 
 //create a user
 
-userRouter.post("/users",zValidator('json', userSchema, (result, c) => {
-    if (!result.success) {
-        return c.json(result.error, 400)}
-        }), createUser)
+userRouter.post("/users", zValidator('json', userSchema, (results, c) => {
+  if (!results.success){
+      return c.json(results.error, 400)
+  }
+}) ,createUser)
 
 //update user
 
