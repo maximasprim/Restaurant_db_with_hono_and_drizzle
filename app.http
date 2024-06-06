@@ -17,7 +17,7 @@ POST http://localhost:8000/api/users
 Content-Type: application/json
 
 {
-    "id": 7,
+    "id": 10,
   "name": "John Doe",
   "contact_phone": "123-456-7890",
   "phone_verified": true,
