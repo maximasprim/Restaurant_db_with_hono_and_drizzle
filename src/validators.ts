@@ -49,3 +49,7 @@ export const addressSchema = z.object({
     user_id:z.number(),
     city_id:z.number()
 })
+
+export const restaurantSchema = z.object({
+    
+})

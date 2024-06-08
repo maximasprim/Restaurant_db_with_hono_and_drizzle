@@ -55,6 +55,7 @@ app.route("/",stateRouter)  //users
 app.route("/",cityRouter)
 app.route("/",driverRouter)
 app.route("/",addressRouter)
+// app.route("/",restaurantRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)
