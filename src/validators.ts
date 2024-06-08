@@ -57,3 +57,7 @@ export const restaurantSchema = z.object({
     zip_code:z.number(),
     city_id:z.number()
 })
+
+export const ordersSchema = z.object({
+    
+})

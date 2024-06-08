@@ -14,6 +14,7 @@ import { type Context } from "hono";
 import { prometheus } from '@hono/prometheus'
 import { driverRouter } from './drivers/driver.router'
 import { restaurantRouter } from './restaurant/restaurant.router'
+import { orderRouter } from './orders/order.router'
 
 
 const app = new Hono().basePath('/api')
@@ -57,6 +58,7 @@ app.route("/",cityRouter)
 app.route("/",driverRouter)
 app.route("/",addressRouter)
 app.route("/",restaurantRouter)
+app.route("/",orderRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)
