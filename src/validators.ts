@@ -39,3 +39,7 @@ export const driverSchema = z.object({
     
 
 })
+
+export const addressSchema = z.object({
+    
+})

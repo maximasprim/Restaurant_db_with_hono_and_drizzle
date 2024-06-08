@@ -8,6 +8,7 @@ import { timeout} from 'hono/timeout'
 import { userRouter } from './Users/user.router'
 import { cityRouter } from './city/city.router'
 import { stateRouter } from './state/state.router'
+import { addressRouter } from './address/address.router'
 import { HTTPException } from 'hono/http-exception'
 import { type Context } from "hono";
 import { prometheus } from '@hono/prometheus'
@@ -53,6 +54,7 @@ app.route("/",userRouter)  //users
 app.route("/",stateRouter)  //users
 app.route("/",cityRouter)
 app.route("/",driverRouter)
+app.route("/",addressRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)
