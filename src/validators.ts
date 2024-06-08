@@ -72,5 +72,10 @@ export const ordersSchema = z.object({
     comment:z.string()
 })
 export const commentsSchema = z.object({
-    
+    id:z.number(),
+    order_id:z.number(),
+    user_id:z.number(),
+    comment_text:z.string(),
+    is_complaint:z.boolean(),
+    is_praise:z.boolean()
 })

@@ -212,3 +212,31 @@ PUT http://localhost:8000/api/orders/1
 
 ###
 DELETE http://localhost:8000/api/orders/1
+
+//comments microservice queries
+###
+GET http://localhost:8000/api/comments
+###
+GET http://localhost:8000/api/comments/1
+###
+POST http://localhost:8000/api/comments
+ Content-Type: application/json
+
+ {
+  "id": 2,
+  "order_id": 2,
+  "user_id": 2,
+  "comment_text": "Poor Service!",
+  "is_complaint": true,
+  "is_praise": false
+ }
+###
+PUT http://localhost:8000/api/comments/1
+ Content-Type: application/json
+
+ {
+  "comment_text":"Improve your customer service please!"
+ }
+
+###
+DELETE http://localhost:8000/api/comments/2
