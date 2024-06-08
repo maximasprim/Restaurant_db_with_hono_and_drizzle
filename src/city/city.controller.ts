@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { cityService, getCityService, createCityService, updateCityService } from "./city.service";
+import { cityService, getCityService, createCityService, updateCityService, deleteCityService } from "./city.service";
 
 
 
@@ -47,15 +47,38 @@ export const updateCity = async (c: Context) => {
   //search for user
   const founduser = await getCityService(id);
   if (founduser == undefined) 
-      return c.text("State not found!", 404);
+      return c.text("City not found!", 404);
   //get the data and update
   const res = await updateCityService(id, user);
   //return the updated user
   if (!res )
-    return c.text("State not updated!", 404); 
+    return c.text("City not updated!", 404); 
     return c.json({msg: res}, 201);
 
 } catch (error: any){
     return c.json({error: error?.message}, 400)
 }
+}
+
+//delete city
+export const deleteCity =  async (c: Context) => {
+  const id = Number(c.req.param("id"));
+  if (isNaN(id)) 
+      return c.text("invalid ID!", 400);
+
+  try{
+
+ //search for the user
+ const city = await getCityService(id);
+ if (city == undefined) 
+     return c.text("city not found!👽", 404);
+  //delete the user
+  const res = await deleteCityService(id);
+  if (!res) return c.text("city not deleted!👽", 404);
+
+  return c.json({msg: res}, 201);
+
+  }catch(error: any){
+      return c.json({error: error?.message}, 400)
+  }
 }

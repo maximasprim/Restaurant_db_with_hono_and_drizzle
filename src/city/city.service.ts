@@ -22,10 +22,10 @@ export const createCityService = async (city: TICity): Promise<TICity> => {
 
 export const updateCityService = async (id: number, user: TICity) => {
     await db.update(cityTable).set(user).where(eq(cityTable.id, id))
-    return "State updated successfully";
+    return "City updated successfully";
 }
 
 export const deleteCityService = async (id: number) => {
     await db.delete(cityTable).where(eq(cityTable.id, id))
-    return "State deleted successfully";
+    return "City deleted successfully";
 }

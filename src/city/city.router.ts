@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { createCity, getSingleCity, listCity, updateCity } from "./city.controller";
+import { createCity, getSingleCity, listCity, updateCity, deleteCity } from "./city.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { citySchema } from "../validators";
@@ -27,6 +27,9 @@ cityRouter.post("/cities", zValidator('json', citySchema, (results, c) => {
   }
 }) ,createCity)
 
-//update State
+//update City
 
-cityRouter.put("/states/:id", updateCity)
+cityRouter.put("/cities/:id", updateCity)
+
+// delete city
+cityRouter.delete("/cities/:id", deleteCity)

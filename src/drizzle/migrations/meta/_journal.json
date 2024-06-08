@@ -15,6 +15,13 @@
       "when": 1717659202035,
       "tag": "0001_abandoned_ozymandias",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1717827295715,
+      "tag": "0002_mysterious_magneto",
+      "breakpoints": true
     }
   ]
 }

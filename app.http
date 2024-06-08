@@ -28,7 +28,6 @@ Content-Type: application/json
   }
 ###
 PUT http://localhost:8000/api/users/2
-
 Content-Type: application/json
 
 {
@@ -82,10 +81,11 @@ POST http://localhost:8000/api/cities
 PUT http://localhost:8000/api/cities/5
  Content-Type: application/json
 
-    { 
+  { 
 
-      "name": "Florida"
-    }
-
+    "name": "Florida"
+  }
+###
+DELETE http://localhost:8000/api/cities/4
 
  
