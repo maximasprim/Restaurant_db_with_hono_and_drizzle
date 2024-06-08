@@ -71,3 +71,6 @@ export const ordersSchema = z.object({
     final_price:z.number(),
     comment:z.string()
 })
+export const commentsSchema = z.object({
+    
+})
