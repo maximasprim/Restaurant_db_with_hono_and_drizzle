@@ -11,17 +11,17 @@ import { addressSchema } from "../validators";
 export const addressRouter = new Hono();
 
 //get states
-addressRouter.get("/addresses", listAddress)
+addressRouter.get("/address", listAddress)
 
 //get a single city    
 
-addressRouter.get("/addresses/:id", getSingleAddress)
+addressRouter.get("/address/:id", getSingleAddress)
 
 
 
 //create State
 
-addressRouter.post("/addresses", zValidator('json', addressSchema, (results, c) => {
+addressRouter.post("/address", zValidator('json', addressSchema, (results, c) => {
   if (!results.success){
       return c.json(results.error, 400)
   }
@@ -29,7 +29,7 @@ addressRouter.post("/addresses", zValidator('json', addressSchema, (results, c) 
 
 //update City
 
-addressRouter.put("/addresses/:id", updateAddress)
+addressRouter.put("/address/:id", updateAddress)
 
 // delete city
-addressRouter.delete("/addresses/:id", deleteAddress)
+addressRouter.delete("/address/:id", deleteAddress)

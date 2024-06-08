@@ -119,4 +119,34 @@ PUT http://localhost:8000/api/drivers/1
 ###
 DELETE http://localhost:8000/api/drivers/3
 
+//address queries
+###
+GET http://localhost:8000/api/address
+
+###
+GET http://localhost:8000/api/address/3
+###
+POST http://localhost:8000/api/address
+ Content-Type: application/json
  
+ {
+    "id": 4,
+    "street_address_1": "126 Main St",
+    "street_address_2": "Apt 1",
+    "zip_code": 90001,
+    "delivery_instructions": "Leave at the front door",
+    "user_id": 1,
+    "city_id": 2
+    
+  }
+
+###
+PUT http://localhost:8000/api/address/4
+ Content-Type: application/json
+
+ {
+  "street_address_1":"120 Uptown",
+  "stree_address_2":"Apt 2"
+ }  
+###
+DELETE http://localhost:8000/api/address/4

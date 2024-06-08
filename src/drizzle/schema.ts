@@ -83,8 +83,8 @@ export const usersTable = pgTable("users", {
     delivery_instructions: varchar("delivery_instructions", { length: 256 }),
     user_id: integer("user_id").references(() => usersTable.id),
     city_id: integer("city_id").references(() => cityTable.id),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    // created_at: timestamp("created_at").defaultNow(),
+    // updated_at: timestamp("updated_at").defaultNow(),
   });
   // city table creation.defaultNow()
   export const cityTable = pgTable("city", {

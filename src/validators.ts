@@ -41,5 +41,11 @@ export const driverSchema = z.object({
 })
 
 export const addressSchema = z.object({
-    
+    id:z.number(),
+    street_address_1:z.string(),
+    street_address_2:z.string(),
+    zip_code:z.number(),
+    delivery_instructions:z.string(),
+    user_id:z.number(),
+    city_id:z.number()
 })
