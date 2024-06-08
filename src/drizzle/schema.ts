@@ -113,8 +113,8 @@ export const usersTable = pgTable("users", {
     user_id: integer("user_id").references(() => usersTable.id),
     online: boolean("online"),
     delivering: boolean("delivering"),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    // created_at: timestamp("created_at").defaultNow(),
+    // updated_at: timestamp("updated_at").defaultNow(),
   });
   
   // orderStatusTable creation

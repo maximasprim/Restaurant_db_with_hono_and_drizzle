@@ -29,5 +29,13 @@ export const citySchema = z.object({
     
 })
 export const driverSchema = z.object({
+    id:z.number(),
+    car_make:z.string(),
+    car_model:z.string(),
+    car_year:z.number(),
+    user_id:z.number(),
+    online:z.boolean(),
+    delivering:z.boolean(),
     
+
 })

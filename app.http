@@ -88,4 +88,35 @@ PUT http://localhost:8000/api/cities/5
 ###
 DELETE http://localhost:8000/api/cities/4
 
+//drivers queries
+###
+GET http://localhost:8000/api/drivers
+###
+GET http://localhost:8000/api/drivers/1
+###
+POST http://localhost:8000/api/drivers
+Content-Type: application/json
+
+{
+  "id": 3,
+  "car_make": "lamborghini",
+  "car_model": "Urus",
+  "car_year": 2018,
+  "user_id": 1,
+  "online": true,
+  "delivering": true
+  
+}
+
+###
+PUT http://localhost:8000/api/drivers/1
+ Content-Type: application/json
+
+ {
+  "car_model":"Crown"
+ }
+
+###
+DELETE http://localhost:8000/api/drivers/3
+
  

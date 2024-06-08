@@ -11,6 +11,7 @@ import { stateRouter } from './state/state.router'
 import { HTTPException } from 'hono/http-exception'
 import { type Context } from "hono";
 import { prometheus } from '@hono/prometheus'
+import { driverRouter } from './drivers/driver.router'
 
 
 const app = new Hono().basePath('/api')
@@ -51,6 +52,7 @@ app.get('/metrics', printMetrics)
 app.route("/",userRouter)  //users
 app.route("/",stateRouter)  //users
 app.route("/",cityRouter)
+app.route("/",driverRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)
