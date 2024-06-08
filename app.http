@@ -150,3 +150,31 @@ PUT http://localhost:8000/api/address/4
  }  
 ###
 DELETE http://localhost:8000/api/address/4
+
+//restaurant queries
+###
+GET http://localhost:8000/api/restaurant
+###
+GET http://localhost:8000/api/restaurant/4
+###
+POST http://localhost:8000/api/restaurant
+ Content-Type: application/json
+
+ {
+   "id": 2,
+    "name": "Pizza Paradise",
+    "street_address": "456 Flavor St",
+    "zip_code": 80302,
+    "city_id": 3
+ }
+
+  
+###
+PUT http://localhost:8000/api/restaurant/2
+ Content-Type: application/json
+  
+  {
+    "street_address":"213 Downyown"
+  }
+###
+DELETE http://localhost:8000/api/restaurant/2  

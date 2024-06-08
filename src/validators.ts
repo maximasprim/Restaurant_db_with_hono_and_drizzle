@@ -51,5 +51,9 @@ export const addressSchema = z.object({
 })
 
 export const restaurantSchema = z.object({
-    
+    id:z.number(),
+    name:z.string(),
+    street_address:z.string(),
+    zip_code:z.number(),
+    city_id:z.number()
 })
