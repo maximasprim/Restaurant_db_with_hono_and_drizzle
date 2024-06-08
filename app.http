@@ -177,4 +177,38 @@ PUT http://localhost:8000/api/restaurant/2
     "street_address":"213 Downyown"
   }
 ###
-DELETE http://localhost:8000/api/restaurant/2  
+DELETE http://localhost:8000/api/restaurant/2 
+
+//orders table queries
+###
+GET http://localhost:8000/api/orders
+###
+GET http://localhost:8000/api/orders/
+###
+POST http://localhost:8000/api/orders
+ Content-Type: application/json
+
+ {
+  "id": 2,
+  "restaurant_id": 4,
+  "estimated_delivery_time": "3 working days",
+  "actual_delivery_time": "5 working days",
+  "delivery_address_id": 3,
+  "user_id": 3,
+  "driver_id": 1,
+  "price": 1000,
+  "discount": 250,
+  "final_price": 900,
+  "comment": "Good customer service"
+ }
+
+###
+PUT http://localhost:8000/api/orders/1
+ Content-Type: application/json
+
+ {
+  "discount":"15"
+ }
+
+###
+DELETE http://localhost:8000/api/orders/1

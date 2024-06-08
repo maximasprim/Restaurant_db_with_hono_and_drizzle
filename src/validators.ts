@@ -59,5 +59,15 @@ export const restaurantSchema = z.object({
 })
 
 export const ordersSchema = z.object({
-    
+    id:z.number(),
+    restaurant_id:z.number(),
+    estimated_delivery_time:z.string(),
+    actual_delivery_time:z.string(),
+    delivery_address_id:z.number(),
+    user_id:z.number(),
+    driver_id:z.number(),
+    price:z.number(),
+    discount:z.number(),
+    final_price:z.number(),
+    comment:z.string()
 })
