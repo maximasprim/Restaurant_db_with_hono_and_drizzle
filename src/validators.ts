@@ -28,3 +28,6 @@ export const citySchema = z.object({
     
     
 })
+export const driverSchema = z.object({
+    
+})
