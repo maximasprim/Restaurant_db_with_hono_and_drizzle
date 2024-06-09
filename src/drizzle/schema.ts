@@ -377,8 +377,8 @@ export type TSRestaurant = typeof restaurantTable.$inferSelect;
 export type TIState = typeof stateTable.$inferInsert;
 export type TSState = typeof stateTable.$inferSelect;
  
-export type TIStatusCatalog = typeof stateTable.$inferInsert;
-export type TSStatusCatalog = typeof stateTable.$inferSelect;
+export type TIStatusCatalogue = typeof statusCatalogueTable.$inferInsert;
+export type TSStatusCatalogue = typeof statusCatalogueTable.$inferSelect;
  
 export type TIUsers = typeof usersTable.$inferInsert;
 export type TSUsers = typeof usersTable.$inferSelect;
