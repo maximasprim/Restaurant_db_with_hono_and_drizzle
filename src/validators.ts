@@ -88,3 +88,6 @@ export const restaurant_ownerSchema = z.object({
 export const categorySchema = z.object({
     
 })
+export const menu_itemSchema = z.object({
+    
+})
