@@ -291,3 +291,35 @@ PUT http://localhost:8000/api/category/3
 
 ###
 DELETE http://localhost:8000/api/category/3
+
+//menu_item queries
+###
+GET http://localhost:8000/api/menu_item
+###
+GET http://localhost:8000/api/menu_item/2
+
+###
+POST http://localhost:8000/api/menu_item
+ Content-Type: application/json
+
+ {
+  "id": 1,
+  "name": "Veggie Pizza",
+  "restaurant_id": 2,
+  "category_id": 2,
+  "description": "A healthy veggie pizza topped with bell peppers, olives, and onions",
+  "ingredients": "Dough, Tomato Sauce, Bell Peppers, Olives, Onions, Cheese",
+  "price": "1200",
+  "active": true
+ }
+
+###
+PUT http://localhost:8000/api/menu_item/1
+ Content-Type: application/json
+
+ {
+  "active":false
+ }
+
+###
+DELETE http://localhost:8000/api/menu_item/1
