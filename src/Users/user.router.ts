@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { createUser, getSingleUser, listUsers, updateUser } from "./user.controller";
+import { createUser, getSingleUser, listUsers, updateUser, deleteUser } from "./user.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { userSchema } from "../validators";
@@ -30,3 +30,6 @@ userRouter.post("/users", zValidator('json', userSchema, (results, c) => {
 //update user
 
 userRouter.put("/users/:id", updateUser)
+
+// delete Driver
+userRouter.delete("/users/:id", deleteUser)

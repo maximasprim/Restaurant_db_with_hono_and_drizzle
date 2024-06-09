@@ -59,3 +59,26 @@ export const updateUser = async (c: Context) => {
     return c.json({error: error?.message}, 400)
 }
 }
+
+//delete user
+export const deleteUser =  async (c: Context) => {
+  const id = Number(c.req.param("id"));
+  if (isNaN(id)) 
+      return c.text("invalid ID!", 400);
+
+  try{
+
+ //search for the user
+ const user = await getUserService(id);
+ if (user == undefined) 
+     return c.text("User not found!👽", 404);
+  //delete the user
+  const res = await deleteUserService(id);
+  if (!res) return c.text("User not deleted!👽", 404);
+
+  return c.json({msg: res}, 201);
+
+  }catch(error: any){
+      return c.json({error: error?.message}, 400)
+  }
+}
