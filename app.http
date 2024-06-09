@@ -380,3 +380,29 @@ PUT http://localhost:8000/api/status_catalogues/3
 
 ###
 DELETE http://localhost:8000/api/status_catalogues/3
+
+//orderStatus queries
+###
+GET http://localhost:8000/api/orderStatus
+###
+GET http://localhost:8000/api/orderStatus/2
+###
+post http://localhost:8000/api/orderStatus
+ Content-Type: application/json
+
+ {
+  "id": 3,
+  "order_id": 2,
+  "status_catalog_id": 2
+  
+ }
+###
+put http://localhost:8000/api/orderStatus/3
+ Content-Type: application/json
+
+ {
+  "order_id":"1"
+ }
+
+###
+DELETE http://localhost:8000/api/orderStatus/3
