@@ -354,3 +354,29 @@ PUT http://localhost:8000/api/order_menu_item/1
 
 ###
 DELETE http://localhost:8000/api/order_menu_item/1
+
+
+//status_catalogue queries
+###
+GET http://localhost:8000/api/status_catalogues
+###
+GET http://localhost:8000/api/status_catalogues/2
+### 
+POST http://localhost:8000/api/status_catalogues
+ Content-Type: application/json
+
+ {
+  "id": 3,
+  "name": "Ready for pickup"
+ }
+
+###
+PUT http://localhost:8000/api/status_catalogues/3
+ Content-Type: application/json
+
+ {
+  "name":"Already picked"
+ }
+
+###
+DELETE http://localhost:8000/api/status_catalogues/3

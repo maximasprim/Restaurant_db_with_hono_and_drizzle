@@ -25,7 +25,7 @@ export const updateStatus_catalogueService = async (id: number, status_catalogue
     return "Status_catalogue updated successfully";
 }
 
-export const deletestatus_catalogueService = async (id: number) => {
+export const deleteStatus_catalogueService = async (id: number) => {
     await db.delete(statusCatalogueTable).where(eq(statusCatalogueTable.id, id))
     return "Status_catalogue deleted successfully";
 }

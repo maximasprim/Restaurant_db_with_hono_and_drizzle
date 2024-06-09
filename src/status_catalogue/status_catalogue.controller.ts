@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { status_catalogueService, getStatus_catalogueService, createStatus_catalogueService, updateStatus_catalogueService } from "./status_catalogue.service";
+import { status_catalogueService, getStatus_catalogueService, createStatus_catalogueService, updateStatus_catalogueService, deleteStatus_catalogueService } from "./status_catalogue.service";
 
 
 
@@ -58,4 +58,26 @@ export const updateStatus_catalogue = async (c: Context) => {
 } catch (error: any){
     return c.json({error: error?.message}, 400)
 }
+}
+//delete city
+export const deleteStatus_catalogue =  async (c: Context) => {
+  const id = Number(c.req.param("id"));
+  if (isNaN(id)) 
+      return c.text("invalid ID!", 400);
+
+  try{
+
+ //search for the user
+ const status_catalogue = await getStatus_catalogueService(id);
+ if (status_catalogue == undefined) 
+     return c.text("status_catalogue not found!👽", 404);
+  //delete the user
+  const res = await deleteStatus_catalogueService(id);
+  if (!res) return c.text("status_catalogue not deleted!👽", 404);
+
+  return c.json({msg: res}, 201);
+
+  }catch(error: any){
+      return c.json({error: error?.message}, 400)
+  }
 }

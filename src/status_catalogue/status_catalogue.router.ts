@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { createStatus_catalogue, getSingleStatus_catalogue, listStatus_catalogue, updateStatus_catalogue } from "./status_catalogue.controller";
+import { createStatus_catalogue, getSingleStatus_catalogue, listStatus_catalogue, updateStatus_catalogue, deleteStatus_catalogue } from "./status_catalogue.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { status_catalogueSchema } from "../validators";
@@ -30,3 +30,6 @@ status_catalogueRouter.post("/status_catalogues", zValidator('json', status_cata
 //update Status_catalogue
 
 status_catalogueRouter.put("/status_catalogues/:id", updateStatus_catalogue)
+
+// delete Driver
+status_catalogueRouter.delete("/status_catalogues/:id", deleteStatus_catalogue)
