@@ -81,5 +81,7 @@ export const commentsSchema = z.object({
 })
 
 export const restaurant_ownerSchema = z.object({
-
+    id:z.number(),
+    restaurant_id:z.number(),
+    owner_id:z.number()
 })

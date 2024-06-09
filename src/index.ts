@@ -16,6 +16,7 @@ import { driverRouter } from './drivers/driver.router'
 import { restaurantRouter } from './restaurant/restaurant.router'
 import { orderRouter } from './orders/order.router'
 import { commentsRouter } from './comments/comments.router'
+import { restaurant_ownerRouter } from './restaurant_owner/restaurant_owner.router'
 
 const app = new Hono().basePath('/api')
 
@@ -60,6 +61,7 @@ app.route("/",addressRouter)
 app.route("/",restaurantRouter)
 app.route("/",orderRouter)
 app.route("/",commentsRouter)
+app.route("/",restaurant_ownerRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)

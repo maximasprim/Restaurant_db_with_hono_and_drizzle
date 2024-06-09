@@ -240,3 +240,29 @@ PUT http://localhost:8000/api/comments/1
 
 ###
 DELETE http://localhost:8000/api/comments/2
+
+//restaurant_owner queries
+###
+GET http://localhost:8000/api/restaurant_owner
+###
+GET http://localhost:8000/api/restaurant_owner/3
+###
+POST http://localhost:8000/api/restaurant_owner
+ Content-Type: application/json
+
+ {
+  "id": 4,
+  "restaurant_id": 2,
+  "owner_id": 3
+ }
+
+###
+PUT http://localhost:8000/api/restaurant_owner/4
+ Content-Type: application/json
+
+ {
+  "owner_id":2
+ }
+
+###
+DELETE http://localhost:8000/api/restaurant_owner/4
