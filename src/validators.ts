@@ -98,3 +98,6 @@ export const order_menu_itemSchema = z.object({
 export const status_catalogueSchema = z.object({
 
 })
+export const orderStatusSchema = z.object({
+
+})

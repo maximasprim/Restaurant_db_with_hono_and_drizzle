@@ -365,8 +365,8 @@ export type TSMenuItem = typeof menuItemTable.$inferSelect;
 export type TIOrderMenuItem = typeof orderMenuItemTable.$inferInsert;
 export type TSOrderMenuItem = typeof orderMenuItemTable.$inferSelect;
  
-export type TIOrderStatus = typeof orderMenuItemTable.$inferInsert;
-export type TSOrderStatus = typeof orderMenuItemTable.$inferSelect;
+export type TIOrderStatus = typeof orderStatusTable.$inferInsert;
+export type TSOrderStatus = typeof orderStatusTable.$inferSelect;
  
 export type TIOrders = typeof ordersTable.$inferInsert;
 export type TSOrders = typeof ordersTable.$inferSelect;
