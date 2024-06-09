@@ -64,8 +64,8 @@ export const usersTable = pgTable("users", {
       menu_item_id: integer("menu_item_id").notNull().references(() => menuItemTable.id),
       quantity: integer("quantity").notNull(),
       item_price: varchar("item_price", { length: 256 }).notNull(),
-      price: timestamp("price").notNull(),
-      comment: timestamp("comment").notNull(),
+      price: varchar("price", { length: 256 }).notNull(),
+      comment: varchar("comment", { length: 256 }).notNull()
     });
   
   //   state table creation

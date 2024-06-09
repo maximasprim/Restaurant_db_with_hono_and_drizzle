@@ -323,3 +323,31 @@ PUT http://localhost:8000/api/menu_item/1
 
 ###
 DELETE http://localhost:8000/api/menu_item/1
+
+//order_menu_iten queries
+###
+GET http://localhost:8000/api/order_menu_item
+###
+GET http://localhost:8000/api/order_menu_item/2
+###
+POST http://localhost:8000/api/order_menu_item
+ Content-Type: application/json
+
+ {
+  
+  "id": 1,
+  "order_id": 2,
+  "menu_item_id": 2,
+  "quantity": 5,
+  "item_price": "100",
+  "price": "500",
+  "comment": "Well packed please!"
+ }
+
+###
+PUT http://localhost:8000/api/order_menu_item/1
+ Content-Type: application/json
+
+ {
+  "item_price":120
+ }

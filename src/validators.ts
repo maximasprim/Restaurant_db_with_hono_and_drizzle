@@ -91,3 +91,7 @@ export const categorySchema = z.object({
 export const menu_itemSchema = z.object({
     
 })
+
+export const order_menu_itemSchema = z.object({
+    
+})

@@ -36,6 +36,20 @@
       "when": 1717841829262,
       "tag": "0004_overrated_squadron_supreme",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1717916072775,
+      "tag": "0005_amused_warlock",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1717916234123,
+      "tag": "0006_rich_lester",
+      "breakpoints": true
     }
   ]
 }
