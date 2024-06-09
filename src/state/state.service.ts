@@ -25,7 +25,7 @@ export const updatestateervice = async (id: number, user: TIState) => {
     return "State updated successfully";
 }
 
-export const deletestateervice = async (id: number) => {
+export const deletestateService = async (id: number) => {
     await db.delete(stateTable).where(eq(stateTable.id, id))
     return "State deleted successfully";
 }

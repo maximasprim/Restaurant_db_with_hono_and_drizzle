@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { stateService, getStateService, createStateService, updatestateervice } from "./state.service";
+import { stateService, getStateService, createStateService, updatestateervice, deletestateService } from "./state.service";
 
 
 
@@ -58,4 +58,27 @@ export const updateState = async (c: Context) => {
 } catch (error: any){
     return c.json({error: error?.message}, 400)
 }
+}
+
+//delete state
+export const deleteState =  async (c: Context) => {
+  const id = Number(c.req.param("id"));
+  if (isNaN(id)) 
+      return c.text("invalid ID!", 400);
+
+  try{
+
+ //search for the user
+ const state = await getStateService(id);
+ if (state == undefined) 
+     return c.text("state not found!👽", 404);
+  //delete the state
+  const res = await deletestateService(id);
+  if (!res) return c.text("state not deleted!👽", 404);
+
+  return c.json({msg: res}, 201);
+
+  }catch(error: any){
+      return c.json({error: error?.message}, 400)
+  }
 }
