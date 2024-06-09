@@ -79,3 +79,7 @@ export const commentsSchema = z.object({
     is_complaint:z.boolean(),
     is_praise:z.boolean()
 })
+
+export const restaurant_ownerSchema = z.object({
+
+})
