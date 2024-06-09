@@ -351,3 +351,6 @@ PUT http://localhost:8000/api/order_menu_item/1
  {
   "item_price":120
  }
+
+###
+DELETE http://localhost:8000/api/order_menu_item/1

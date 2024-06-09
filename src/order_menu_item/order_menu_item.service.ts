@@ -25,7 +25,7 @@ export const updateOrder_menu_itemService = async (id: number, order_menu_item: 
     return "Order_menu_item updated successfully";
 }
 
-export const deleteMenu_itemService = async (id: number) => {
+export const deleteOrder_menu_itemService = async (id: number) => {
     await db.delete(orderMenuItemTable).where(eq(orderMenuItemTable.id, id))
     return "Order_menu_item deleted successfully";
 }
