@@ -85,3 +85,6 @@ export const restaurant_ownerSchema = z.object({
     restaurant_id:z.number(),
     owner_id:z.number()
 })
+export const categorySchema = z.object({
+    
+})
